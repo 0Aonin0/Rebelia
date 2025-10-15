@@ -3,7 +3,8 @@ Pizza site
 Made by Piskun Valeriy,Skubenyk Yegor,Semenenko Mykhailo
 Ребелія - це сайт, де ви можете обрати собі піцу яку б хотіли замовити та вибрати куди її вам доставити. Все дуже зручно: вибір вам допоможуть зробити зображення піци, її опис та перелік складових. 
 Нижче представлена структура головної сторінки сайту,ви потрапляєте в меню яким можна користуватись:
-header
+```html
+<header>
     <div class="logo">
         <img src="pizza_logo.png" alt="Rebelia Pizza Logo">
         <h1>Rebelia</h1>
@@ -15,4 +16,4 @@ header
             <li><a href="#contacts">Контакти</a></li>
         </ul>
     </nav>
-header
+</header>
