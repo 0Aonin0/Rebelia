@@ -1,23 +1,19 @@
-.catalog-header{
-    font-size: 32px;
-    text-align: center;
-}
 .pizza-item{
-    width: 330px;
+    width: 430px;
     padding: 12px;
     button{
         font-family: 'Inter';
         background-color: #fff1a3;
+        border-radius: 10px;
+        padding: 1px;
     }
 }
-
 .pizza-price{
     float: right;
     font-size: 16px;
     color: #8a8a8a;
     font-family: 'Inter';
 }
-
 .pizza-image{
     width: 100%;
     border-radius: 20px;

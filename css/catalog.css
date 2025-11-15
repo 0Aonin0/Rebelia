@@ -1,0 +1,13 @@
+.catalog-header{
+    font-size: 32px;
+    text-align: center;
+}
+.catalog-main{
+    padding: 20px 100px;
+    display: flex;
+    flex-direction:column;
+}
+.pizza-menu-container{
+    display: flex;
+    justify-content: center;
+}
