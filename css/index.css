@@ -1,15 +1,8 @@
-
-
-header{
-  background-image: linear-gradient(to right, #0F6B13, #1DD126);
-  padding: 25px 50px;
-}
 .index-header{
   height: 180px;
 }
 .logo img{
   width: 350px;
-
 }
 .logo{
   width: 35%;
