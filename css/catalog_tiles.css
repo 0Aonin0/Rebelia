@@ -1,22 +1,4 @@
 .catalog-header{
     font-size: 32px;
-}
-.pizza-item{
-    width: 330px;
-    padding: 12px;
-    button{
-        font-family: 'Montserrat', sans-serif;
-    }
-}
-
-.pizza-price{
-    float: right;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.pizza-image{
-    width: 100%;
-    border-radius: 20px;
-    object-fit: cover;
+    text-align: center;
 }
