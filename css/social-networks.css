@@ -1,0 +1,7 @@
+.social-networks{
+     display: flex;
+     justify-content: space-between;
+  }
+  .social-networks img{
+    width: 45px;
+  }

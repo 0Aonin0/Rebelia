@@ -2,22 +2,26 @@
   height: 180px;
 }
 .logo img{
-  width: 350px;
+  height: 125px;
+  width: auto;
 }
 .logo{
-  width: 35%;
-  float: left;
+  width: 416px;
+  display: flex;
+  align-items: center;
 }
-.index-header h1{
-  visibility: hidden;
+.index-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h1{visibility: hidden;}
 }
 .index-nav{
-  float: left;
-  text-align: center;
-  padding: 50px 
+  width: 433px;
+  display: flex;
+  justify-content: space-between;
 }
 .index-nav a{
-  font-family: 'Nunito';
   font-size: 20px;
   color: rgba(0, 0, 0, 0.55);
 }
@@ -26,5 +30,6 @@
   margin-right: 30px;
 }
 .pizza-image img {
+
 width: 100%;
 }

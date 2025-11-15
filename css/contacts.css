@@ -7,9 +7,9 @@
     font-family: 'Inter';
 }
 .contacts-main p {
-    font-size: 20px;
+    font-size: 36px;
     margin: 5px 0;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .contacts-main img {
