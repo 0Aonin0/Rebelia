@@ -25,9 +25,16 @@
   font-size: 20px;
   color: rgba(0, 0, 0, 0.55);
 }
-.index-nav .top-menu li {
+.social-networks-list{
+  margin-left: 183px;
+}
+.social-networks-list li{
   display: inline-block;
   margin-right: 30px;
+}
+.index-nav .top-menu li {
+  display: inline-block;
+  margin-left: 30px;
 }
 .main-image img {
 width: 100%;
