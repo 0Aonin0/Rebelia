@@ -1,3 +1,10 @@
+.contacts-header{
+    font-size: 32px;
+}
+.contacts-main{
+    padding: 100px;
+    font-family: 'Inter';
+}
 .contacts-main p {
     font-size: 20px;
     margin: 5px 0;

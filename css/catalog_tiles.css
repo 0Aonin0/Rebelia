@@ -1,4 +1,6 @@
-
+.catalog-header{
+    font-size: 32px;
+}
 .pizza-item{
     width: 330px;
     padding: 12px;
