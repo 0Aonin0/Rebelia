@@ -1,0 +1,35 @@
+.contacts-main p {
+    font-size: 20px;
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+.contacts-main img {
+    margin: 20px 0;
+}
+
+.contacts-main ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.contacts-main li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    font-size: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.contacts-main li b {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.contacts-main li span {
+    font-size: 20px;
+    color: #8a8a8a;
+    font-weight: 500;
+} 
