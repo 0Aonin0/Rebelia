@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+.pizza-item{
+    width: 330px;
+    padding: 12px;
+}
+
+.pizza-price{
+    float: right;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;;
+}
+
+.pizza-image{
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
