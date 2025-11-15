@@ -4,7 +4,7 @@ header{
   background-image: linear-gradient(to right, #0F6B13, #1DD126);
   padding: 25px 50px;
 }
-.main-header{
+.index-header{
   height: 180px;
 }
 .logo img{
@@ -15,21 +15,20 @@ header{
   width: 35%;
   float: left;
 }
-h1{
+.index-header h1{
   visibility: hidden;
 }
-
-nav{
+.index-nav{
   float: left;
   text-align: center;
   padding: 50px 
 }
-nav a{
+.index-nav a{
   font-family: 'Nunito';
   font-size: 20px;
   color: rgba(0, 0, 0, 0.55);
 }
-nav .top-menu li {
+.index-nav .top-menu li {
   display: inline-block;
   margin-right: 30px;
 }
