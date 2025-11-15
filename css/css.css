@@ -4,10 +4,11 @@
   
 
 header{
-  width: 100%;
-  height: 180px;
   background-image: linear-gradient(to right, #0F6B13, #1DD126);
   padding: 25px 50px;
+}
+.main-header{
+  height: 180px;
 }
 .logo img{
   width: 350px;
