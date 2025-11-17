@@ -19,3 +19,7 @@
     border-radius: 20px;
     object-fit: cover;
 }
+@media(max-width: 600px){
+    .pizza-item{
+    width: 270px;}
+}

@@ -6,3 +6,9 @@
     padding: 20px 100px;
     font-family: 'Inter';
 }
+@media(max-width:485px) { 
+    .BasketButtons{
+        display: flex;
+        flex-direction: column;
+    }
+}
