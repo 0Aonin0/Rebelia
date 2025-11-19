@@ -33,10 +33,6 @@
   display: inline-block;
   margin-left: 30px;
 }
-/*.main-image img {
-width: 100%;
-}*/
-
 .main-body{
   background-image: url('../images/PizzaMainPage.jpg');
   background-size: cover;

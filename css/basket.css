@@ -112,3 +112,8 @@
         margin-top: 10px;
     }
 }
+@media(max-width:540px){
+    .basket-main{
+    padding: 20px 30px;
+    }
+}
