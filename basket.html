@@ -13,7 +13,42 @@
             <br><button class="PayButton-Basket">Сплатити</button>
             <button class="ClearButton-Basket">Очистити кошик</button><br>
         </form></header> 
-        <main class="basket-main"><div>Ваші товари:</div></main>
+        <main class="basket-main">
+            <form class="customer-info">
+                <label>
+                    Ваше ім'я:
+                    <input type="text" name="name" required minlength="2" placeholder="Данте Віргілійович">
+                    <span class="error-msg">Мінімум 2 символи</span>
+                </label>
+                <label>
+                    Ваша адреса:
+                    <input type="text" name="address" required minlength="5" placeholder="вул. Ігоря Сікорського">
+                    <span class="error-msg">Мінімум 5 символів</span>
+                </label>
+                <label>
+                    Ваш номер телефону:
+                    <input type="tel" pattern="^\+380\d{9}$" name="phone" placeholder="+380620734543">
+                    <span class="error-msg">Має бути в форматі: +380XXXXXXXXX</span>
+                </label>
+            </form>
+            <p class="gray">Ваші товари:</p>
+            <ul class="basket_container">
+                <li class="basket-item">
+                    <img src=".\images\ImagesOfPizzas\gawai_pizza.jpg" alt="Піца Гаваї" class="basket-image">
+                    <div class="basket-details">
+                        <span>Піца Гаваї</span>
+                        <p>Склад: Томатний соус, моцарела, шинка, ананаси.</p>
+                    </div>
+                    <span class="basket-item-price">Ціна: 499 грн</span>
+                    <div class="basket-controls">
+                        <span>Кількість:</span>
+                        <button>-</button>
+                        <input class="basket-item-quantity" min="1" max="99" value="1" required>
+                        <button>+</button>
+                    </div>
+                </li>
+            </ul>
+        </main>
         <footer>
         <nav> 
           <a href="index.html">

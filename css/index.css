@@ -33,18 +33,17 @@
   display: inline-block;
   margin-left: 30px;
 }
-.main-image img {
+/*.main-image img {
 width: 100%;
+}*/
+
+.main-body{
+  background-image: url('../images/PizzaMainPage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
-
-
-
-
-
-
-
-
-
 
 @media(max-width: 1365px){
   .index-nav .top-menu li {

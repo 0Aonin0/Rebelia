@@ -2,13 +2,113 @@
     font-size: 32px;
     text-align: center;
 }
+
 .basket-main{
     padding: 20px 100px;
-    font-family: 'Inter';
 }
-@media(max-width:485px) { 
-    .BasketButtons{
-        display: flex;
+
+.basket_container{
+    list-style: none;
+    background-color: #fff1a3; 
+    padding: 20px; 
+    border-radius: 20px; 
+    margin-top: 5px; 
+    width: fit-content;
+    min-height: 150px;
+}
+
+.basket-item{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+}
+
+.basket-details{
+    span{
+        font-size: 32px;
+        font-family: 'Nunito';
+        margin-bottom: 10px;
+        width: fit-content;
+    }
+    p{
+        width: fit-content;
+    }
+    width: fit-content;
+    flex-grow: 0; 
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    margin-left: 10vw;
+    min-width: 180px;
+}
+.basket-controls{
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+    margin-top: 5px;
+    margin-left: 10vw;
+    button{
+        border-radius: 10px;
+        border-color: black;
+        border-width: 1px;
+        border-style: solid;
+        background-color:#62d475;
+        width: 20px;
+        height: 20px;
+        margin: 0px 3px;
+        cursor: pointer;
+    }
+    input{
+         border-radius: 5px;
+    }
+}
+
+.basket-item-quantity{
+    width: 25px;
+    text-align: center;
+}
+
+.basket-item-price{
+    margin-left: 10vw;
+    min-width: 62px;
+}
+
+.basket-image{
+    height: 100%;
+    border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .basket_container{
+        padding-left: 10px;
+    }
+    .basket-image{
+        height: 100%;
+        border-radius: 20px;
+    }
+
+    .basket-item{
         flex-direction: column;
+        height: 300px;
+    }
+
+    .basket-details{
+        margin-top: 10px;
+        margin-left: 0px;
+        align-items: center;
+        p{
+            text-align: center;
+        }
+    }
+
+    .basket-controls{
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    .basket-item-price{
+        margin-left: 0;
+        margin-top: 10px;
     }
 }

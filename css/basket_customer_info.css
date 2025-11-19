@@ -1,0 +1,36 @@
+.customer-info label{
+    display: block;
+    width: 300px;
+    margin-bottom: 18px;
+}
+
+.customer-info input{
+    display: block;
+    width: 300px;
+    max-width: 300px;
+    padding: 8px 10px;
+    margin-top: 6px;
+}
+
+.customer-info input:invalid:not(:placeholder-shown){
+    border-color: #ff5a5a;
+}
+
+.customer-info input:valid:not(:placeholder-shown){
+    border-color: #49b86e;
+}
+
+.error-msg{
+    color: #e74c3c;
+    font-size: 13px;
+    display: none;
+    margin-top: 4px;
+}
+
+input:invalid:not(:placeholder-shown):not(:focus) + .error-msg{
+    display: block;
+}
+
+input:valid + .error-msg{
+    display: none;
+}
