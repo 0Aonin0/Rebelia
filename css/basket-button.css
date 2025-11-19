@@ -25,3 +25,10 @@
   font-size: 18px;
   cursor: pointer;
 }
+
+@media(max-width:485px) { 
+    .BasketButtons{
+        display: flex;
+        flex-direction: column;
+    }
+}
