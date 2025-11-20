@@ -8,23 +8,25 @@
 }
 
 .basket_container{
-    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
     background-color: #fff1a3; 
     padding: 20px; 
     border-radius: 20px; 
     margin-top: 5px; 
-    width: fit-content;
-    min-height: 150px;
+    row-gap: 20px;
 }
 
-.basket-item{
-    display: flex;
-    align-items: center;
-    width: 100%;
+.basket_container img{
     height: 200px;
+    width: auto;
 }
 
 .basket-details{
+    margin-left: 10px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
     span{
         font-size: 32px;
         font-family: 'Nunito';
@@ -34,20 +36,18 @@
     p{
         width: fit-content;
     }
-    width: fit-content;
-    flex-grow: 0; 
+}
+.basket-controlsBlock{
+    margin-left: 10px;
     display: flex;
     flex-direction:column;
     justify-content: center;
-    margin-left: 10vw;
-    min-width: 180px;
 }
 .basket-controls{
     display: flex;
     flex-direction: row;
     align-items: right;
     margin-top: 5px;
-    margin-left: 10vw;
     button{
         border-radius: 10px;
         border-color: black;
@@ -61,6 +61,7 @@
     }
     input{
          border-radius: 5px;
+         height: 20px;
     }
 }
 
@@ -70,7 +71,10 @@
 }
 
 .basket-item-price{
-    margin-left: 10vw;
+    margin-left: 10px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
     min-width: 62px;
 }
 
@@ -79,38 +83,27 @@
     border-radius: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 993px) {
     .basket_container{
-        padding-left: 10px;
-    }
-    .basket-image{
-        height: 200px;
-        border-radius: 20px;
-    }
-
-    .basket-item{
-        flex-direction: column;
-        height: fit-content;
-    }
-
-    .basket-details{
-        margin-top: 10px;
-        margin-left: 0px;
-        align-items: center;
-        p{
-            text-align: center;
-        }
-    }
-
-    .basket-controls{
-        margin-top: 10px;
-        margin-left: 0;
-    }
-
-    .basket-item-price{
-        margin-left: 0;
-        margin-top: 10px;
-    }
+    grid-template-columns: repeat(1, auto);
+    justify-content: center;   
+    justify-items: center;
+    row-gap: 0px;
+}
+.basket-image{
+    padding-top: 20px;}
+.basket-details{
+    margin-left: 0px;
+    max-width: 400px;
+    align-items: center;
+    text-align: center;
+}
+.basket-controlsBlock{
+    margin-left: 0px;
+}
+.basket-item-price{
+    margin-left: 0px;
+}
 }
 @media(max-width:540px){
     .basket-main{
