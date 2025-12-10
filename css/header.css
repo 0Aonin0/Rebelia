@@ -3,3 +3,6 @@ header{
     font-family: 'Nunito';
     padding: 25px 50px;
 }
+.dark-theme header {
+    background-image: linear-gradient(to right, #151f17ff, #6e6e6eff);
+}

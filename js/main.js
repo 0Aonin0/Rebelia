@@ -141,4 +141,26 @@ document.addEventListener("DOMContentLoaded", () => {
             span.style.display = 'none';
         }
     }
+    
+});
+
+
+//Налаштування теми
+var ThemaCount=0;
+const savedTheme = localStorage.getItem('ThemaCount');
+
+if(savedTheme!==null) {
+    ThemaCount = parseInt(savedTheme, 10)
+    if (ThemaCount === 1) {
+        document.body.classList.add("dark-theme");
+    }
+}
+else{
+ThemaCount=0;
+}
+document.querySelector(".ThemaIcon").addEventListener("click", function(){
+document.body.classList.toggle("dark-theme");
+ThemaCount=(ThemaCount+1)%2;
+localStorage.setItem('ThemaCount', ThemaCount);
+
 });
