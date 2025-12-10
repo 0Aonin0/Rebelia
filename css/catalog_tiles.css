@@ -1,15 +1,19 @@
 .pizza-item{
     width: 430px;
     padding: 12px;
-    button{
-        font-family: 'Inter';
-        background-color: #fff1a3;
-        border-radius: 10px;
-        padding: 1px;
-    }
 }
+
+.add-pizza{
+    font-family: 'Inter';
+    background-color: #fff1a3;
+    border-radius: 10px;
+    padding: 1px;
+    margin-top: 5px;
+}
+
 .pizza-price{
     float: right;
+    margin-top: 10px;
     font-size: 16px;
     color: #8a8a8a;
     font-family: 'Inter';
@@ -29,4 +33,37 @@
     color: green;
     font-size: 16px;
     transition: opacity 0.5s; 
+}
+
+.accordion-btn {
+    background: none;
+    border: none;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+}
+
+.accordion-btn:hover {
+    background-color: #e67e22;
+}
+
+.accordion-content {
+    display: none; 
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #ff9f43; 
+    border-radius: 4px;
+}
+
+.accordion-content.show {
+    display: block; 
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

@@ -114,6 +114,33 @@ function removeItem(domElement, pizzaId) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    const accordionButtons = document.querySelectorAll('.accordion-btn');
+
+    accordionButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+
+            content.classList.toggle('show');
+
+            if (content.classList.contains('show')) {
+                this.innerText = 'Приховати склад';
+            } else {
+                this.innerText = 'Показати склад';
+            }
+        });
+    });
+    
+    const navLinks = document.querySelectorAll('footer nav a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            link.classList.add('active-menu');
+        });
+        link.addEventListener('mouseleave', () => {
+            link.classList.remove('active-menu');
+        });
+    });
+
     const payButton = document.querySelector('.PayButton-Basket');
     const formContainer = document.querySelector('.customer-info');
     
@@ -249,7 +276,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (el.id) {
                     basket.push(el.id);
                     localStorage.setItem("basket", JSON.stringify(basket));
-                    alert("Піца додана у кошик!");
                 } else {
                     console.error("У кнопки немає ID!");
                 }

@@ -16,3 +16,8 @@ footer{
 .dark-theme footer {
     background-image: linear-gradient(to right, #151f17ff, #6e6e6eff);
 }
+
+.active-menu{
+  color: greenyellow;
+  transition: color 0.5s;
+}
