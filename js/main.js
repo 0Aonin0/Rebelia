@@ -264,7 +264,16 @@ ThemaCount=(ThemaCount+1)%2;
 localStorage.setItem('ThemaCount', ThemaCount);
 
 });
+//Дата
+setInterval(printdate,1000);
 
+function printdate(){
+var date = new Date();
+var dateString = date.toDateString(); 
+var timeString = date.toLocaleTimeString(); 
+document.querySelector(".main-date").innerHTML = `<p>${dateString}</p>
+<p>Time:  ${timeString}</p>`;}
+//Валера код
 document.addEventListener("DOMContentLoaded", () => {
     
     // --- 1. ЛОГІКА ДЛЯ СТОРІНКИ КАТАЛОГУ (КНОПКИ "КУПИТИ") ---
@@ -299,16 +308,16 @@ document.addEventListener("DOMContentLoaded", () => {
         // Але поки залишаємо ваш підхід з if-ами для простоти
         for (let pizzaId of basket) {
              if (pizzaId === "Єгоро") {
-                addPizzaToBasket(["Єгоро","Піца Єгоро","Томатний соус...",300,"./images/ImagesOfPizzas/egorro_pizza.jpg"]);
+                addPizzaToBasket(["Єгоро","Піца Єгоро","Томатний соус, моцарела, шинка, салямі, зелений перець, оливки, курячі яйця.",300,"./images/ImagesOfPizzas/egorro_pizza.jpg"]);
             }
             if (pizzaId === "Діабло") {
-                addPizzaToBasket(["Діабло","Піца Діабло","Томатний соус...",150,"./images/ImagesOfPizzas/diablo_pizza.jpg"]);
+                addPizzaToBasket(["Діабло","Піца Діабло","Томатний соус, моцарела, пепероні, перець халапеньйо, пластівці чилі.",150,"./images/ImagesOfPizzas/diablo_pizza.jpg"]);
             }
             if (pizzaId === "Гаваї") {
-                addPizzaToBasket(["Гаваї","Піца Гаваї","Томатний соус...",150,"./images/ImagesOfPizzas/gawai_pizza.jpg"]);
+                addPizzaToBasket(["Гаваї","Піца Гаваї","Томатний соус, моцарела, шинка, ананаси",150,"./images/ImagesOfPizzas/gawai_pizza.jpg"]);
             }
             if (pizzaId === "Маргарита") {
-                addPizzaToBasket(["Маргарита","Піца Маргарита","Томатний соус...",150,"./images/ImagesOfPizzas/margaritta_pizza.jpg"]);
+                addPizzaToBasket(["Маргарита","Піца Маргарита","оматний соус, моцарела, свіжий базилік.",150,"./images/ImagesOfPizzas/margaritta_pizza.jpg"]);
             }
         }
     }
