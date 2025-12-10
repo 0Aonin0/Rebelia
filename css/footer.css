@@ -13,3 +13,6 @@ footer{
     margin: 102px;
     }  
 }
+.dark-theme footer {
+    background-image: linear-gradient(to right, #151f17ff, #6e6e6eff);
+}
