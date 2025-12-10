@@ -21,3 +21,14 @@ footer{
   color: greenyellow;
   transition: color 0.5s;
 }
+
+.main-date{
+font-family: 'Nunito';
+    font-size: 26px;
+    color: rgba(0, 0, 0, 0.55);
+ text-align: center;
+}
+
+.main-footer{
+  padding: 10px 0px 10px 0px;
+}
