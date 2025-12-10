@@ -40,6 +40,79 @@ document.addEventListener('keydown', function(event) {
     });
 });
 
+// Функція створення елемента піци
+function addPizzaToBasket(arr) {
+    const [id, name, desc, price, image] = arr;
+    const container = document.querySelector('.basket_container');
+    const item = document.createElement('div');
+    item.classList.add('basket-item');
+    item.id = id; // Зверніть увагу: це створить дублікати ID, якщо піц декілька однакових. Краще генерувати унікальний ID.
+
+    // ВАЖЛИВО: type="button" для кнопок, щоб вони не перезавантажували сторінку
+    item.innerHTML = `
+        <img src="${image}" alt="${name}" class="basket-image">
+        <div class="basket-details">
+            <span>${name}</span>
+            <p>${desc}</p>
+        </div>
+        <span class="basket-item-price">Ціна: ${price} грн</span>
+        <div class="basket-controlsBlock">
+            <div class="basket-controls">
+                <span>Кількість:</span>
+                <button type="button" class="minus">-</button>
+                <input class="basket-item-quantity" type="number" min="1" max="99" value="1">
+                <button type="button" class="plus">+</button>
+            </div>
+        </div>
+    `;
+    container.appendChild(item);
+
+    const minusBtn = item.querySelector('.minus');
+    const plusBtn = item.querySelector('.plus');
+    const quantityInput = item.querySelector('.basket-item-quantity');
+
+    plusBtn.addEventListener('click', () => {
+        quantityInput.value = Number(quantityInput.value) + 1;
+    });
+
+    minusBtn.addEventListener('click', () => {
+        let val = Number(quantityInput.value);
+        if (val > 1) {
+             quantityInput.value = val - 1;
+        } else {
+            // Запитуємо перед видаленням
+            if(confirm("Видалити цю піцу?")) {
+                removeItem(item, id);
+            }
+        }
+    });
+
+    // Виправлена логіка input (щоб не зникало при ручному введенні)
+    quantityInput.addEventListener('change', () => {
+        if (quantityInput.value <= 0) {
+             removeItem(item, id);
+        }
+    });
+}
+
+function removeItem(domElement, pizzaId) {
+    let basket = JSON.parse(localStorage.getItem("basket")) || [];
+    
+    // Видаляємо ТІЛЬКИ ОДИН елемент з таким ID (використовуємо splice)
+    const index = basket.indexOf(pizzaId);
+    if (index > -1) {
+        basket.splice(index, 1);
+    }
+    
+    localStorage.setItem("basket", JSON.stringify(basket));
+    domElement.remove();
+    
+    // Якщо кошик став пустим - показати напис
+    if (basket.length === 0) {
+        document.querySelector('.basket_container').innerHTML = '<h2 style="text-align:center;">Ваш кошик порожній</h2>';
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const payButton = document.querySelector('.PayButton-Basket');
     const formContainer = document.querySelector('.customer-info');
@@ -163,4 +236,66 @@ document.body.classList.toggle("dark-theme");
 ThemaCount=(ThemaCount+1)%2;
 localStorage.setItem('ThemaCount', ThemaCount);
 
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- 1. ЛОГІКА ДЛЯ СТОРІНКИ КАТАЛОГУ (КНОПКИ "КУПИТИ") ---
+    const addButtons = document.getElementsByClassName("add-pizza");
+    if (addButtons.length > 0) {
+        for (let el of addButtons) {
+            el.addEventListener('click', () => {
+                let basket = JSON.parse(localStorage.getItem("basket")) || [];
+                if (el.id) {
+                    basket.push(el.id);
+                    localStorage.setItem("basket", JSON.stringify(basket));
+                    alert("Піца додана у кошик!");
+                } else {
+                    console.error("У кнопки немає ID!");
+                }
+            });
+        }
+    }
+
+    // --- 2. ЛОГІКА ДЛЯ СТОРІНКИ КОШИКА ---
+    const container = document.querySelector('.basket_container');
+    
+    // Якщо ми не на сторінці кошика - виходимо, щоб не було помилок
+    if (!container) return; 
+
+    // Завантаження товарів
+    let basket = JSON.parse(localStorage.getItem("basket")) || [];
+    
+    if (basket.length === 0) {
+        container.innerHTML = '<h2 style="text-align:center;">Ваш кошик порожній</h2>';
+    } else {
+        // Щоб не дублювати коди піц, краще використовувати об'єкт (базу даних)
+        // Але поки залишаємо ваш підхід з if-ами для простоти
+        for (let pizzaId of basket) {
+             if (pizzaId === "Єгоро") {
+                addPizzaToBasket(["Єгоро","Піца Єгоро","Томатний соус...",300,"./images/ImagesOfPizzas/egorro_pizza.jpg"]);
+            }
+            if (pizzaId === "Діабло") {
+                addPizzaToBasket(["Діабло","Піца Діабло","Томатний соус...",150,"./images/ImagesOfPizzas/diablo_pizza.jpg"]);
+            }
+            if (pizzaId === "Гаваї") {
+                addPizzaToBasket(["Гаваї","Піца Гаваї","Томатний соус...",150,"./images/ImagesOfPizzas/gawai_pizza.jpg"]);
+            }
+            if (pizzaId === "Маргарита") {
+                addPizzaToBasket(["Маргарита","Піца Маргарита","Томатний соус...",150,"./images/ImagesOfPizzas/margaritta_pizza.jpg"]);
+            }
+        }
+    }
+
+    // --- 3. КНОПКА ОЧИСТИТИ КОШИК ---
+    const clearBtn = document.querySelector('.ClearButton-Basket');
+    if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+            if(confirm("Очистити кошик?")) {
+                localStorage.removeItem("basket");
+                container.innerHTML = '<h2 style="text-align:center;">Ваш кошик порожній</h2>';
+                // БІЛЬШЕ НІЧОГО ТУТ НЕ ДОДАЄМО!
+            }
+        });
+    }
 });
