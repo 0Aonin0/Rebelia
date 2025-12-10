@@ -2,14 +2,7 @@ for (let el of document.getElementsByClassName("pizza-price")){
     el.style.color = "red"
 };
 
-var basket_pizzas_count = [0,0,0,0];
-var basket_pizzas_addeded = [0,0,0,0];
 
-for (let el of document.getElementsName("add-pizza"))
-
-document.addEventListener('DOMContentLoaded', ()=>{
-    for
-});
 
 document.addEventListener('DOMContentLoaded', () => {
     const payButton = document.querySelector('.PayButton-Basket');
