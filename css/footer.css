@@ -16,3 +16,13 @@ footer{
 .dark-theme footer {
     background-image: linear-gradient(to right, #151f17ff, #6e6e6eff);
 }
+
+.main-date{
+font-family: 'Nunito';
+    font-size: 26px;
+    color: rgba(0, 0, 0, 0.55);
+ text-align: center;
+}
+.main-footer{
+  padding: 10px 0px 10px 0px;
+}
