@@ -2,9 +2,45 @@ for (let el of document.getElementsByClassName("pizza-price")){
     el.style.color = "red"
 };
 
+for (let el of document.getElementsByClassName("add-pizza")) el.addEventListener('click',()=>{
+    
+            if (el.nextElementSibling && el.nextElementSibling.classList.contains('msg-added')) {
+                return;
+            }
 
+            const message = document.createElement('div');
+            message.innerText = 'Додано у кошик!';
+            message.classList.add('msg-added');
+            el.insertAdjacentElement('afterend', message);
 
-document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                message.style.opacity = '0'; 
+                
+                setTimeout(() => {
+                    message.remove();
+                }, 500); 
+            }, 2000);
+ });
+
+document.addEventListener('keydown', function(event) {
+    if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown') return;
+    event.preventDefault();
+    const textElements = document.querySelectorAll('.contacts-main p, .contacts-main li, .contacts-main span, .contacts-main b, .contacts-main a, .contacts-main h1');
+    const step = 1;
+    textElements.forEach(element => {
+        let currentSize = parseFloat(window.getComputedStyle(element).fontSize);
+        if (event.key === 'ArrowUp') {
+            element.style.fontSize = (currentSize + step) + 'px';
+        } 
+        else if (event.key === 'ArrowDown') {
+            if (currentSize > 8) {
+                element.style.fontSize = (currentSize - step) + 'px';
+            }
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
     const payButton = document.querySelector('.PayButton-Basket');
     const formContainer = document.querySelector('.customer-info');
     

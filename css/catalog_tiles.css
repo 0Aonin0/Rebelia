@@ -23,3 +23,10 @@
     .pizza-item{
     width: 270px;}
 }
+
+.msg-added{
+    margin-top: 10px;
+    color: green;
+    font-size: 16px;
+    transition: opacity 0.5s; 
+}
