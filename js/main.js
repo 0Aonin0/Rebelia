@@ -261,8 +261,9 @@ function printdate(){
 var date = new Date();
 var dateString = date.toDateString(); 
 var timeString = date.toLocaleTimeString(); 
+if(document.querySelector(".main-date")){
 document.querySelector(".main-date").innerHTML = `<p>${dateString}</p>
-<p>Time:  ${timeString}</p>`;}
+<p>Time:  ${timeString}</p>`;}}
 document.addEventListener("DOMContentLoaded", () => {
     
     const addButtons = document.getElementsByClassName("add-pizza");
